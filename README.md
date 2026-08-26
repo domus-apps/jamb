@@ -1,7 +1,11 @@
-# Jamb
+<p align="center">
+  <img src="Assets/banner.png" alt="Jamb — Jump the cursor into any input on screen" />
+</p>
 
-Jump the text cursor into any input field on screen, keyboard-only — in the
-spirit of VSCode's Jumpy, but system-wide.
+<p align="center">
+  Jump the text cursor into any input field on screen, keyboard-only —<br />
+  in the spirit of VSCode's Jumpy, but system-wide.
+</p>
 
 Press ⌃⌥J and Jamb walks every window visible on screen — all apps, not
 just the active one — through the Accessibility API, finds every visible
