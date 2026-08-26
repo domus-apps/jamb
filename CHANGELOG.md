@@ -4,7 +4,7 @@ All notable changes to Jamb are documented here. The release workflow publishes 
 
 Keep each bullet on a single line: release notes render line breaks literally (both on GitHub and in the update dialog), so wrapped lines would break mid-sentence.
 
-## 0.1.0
+## 1.0.0
 
 - Initial release: press ⌃⌥J and every text input visible on screen — across all apps and windows — gets a label chip and a highlight; type the label and the caret jumps there, ready to type.
 - Cross-app jumps activate the target app and raise its window; fields in background apps work the same as the active one.
