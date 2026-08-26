@@ -5,5 +5,25 @@
   <channel>
     <title>Jamb</title>
     <link>https://github.com/domus-apps/jamb</link>
+    <item>
+      <title>Jamb v1.0.0</title>
+      <link>https://github.com/domus-apps/jamb/releases/tag/v1.0.0</link>
+      <pubDate>Wed, 26 Aug 2026 12:46:06 +0000</pubDate>
+      <description><![CDATA[
+<ul>
+<li>Initial release: press ⌃⌥J and every text input visible on screen — across all apps and windows — gets a label chip and a highlight; type the label and the caret jumps there, ready to type.</li>
+<li>Cross-app jumps activate the target app and raise its window; fields in background apps work the same as the active one.</li>
+<li>Works with native apps, Electron apps (their accessibility tree is woken automatically), and web pages — Safari out of the box, Chromium browsers after enabling web accessibility (Jamb shows a one-time walkthrough per browser).</li>
+<li>Label keys match by keyboard position, so non-Latin input sources (e.g. Korean) and alternative Latin layouts (Dvorak) both work.</li>
+<li>First-run onboarding gates on the Accessibility permission; a customizable global shortcut lives in Settings, and Sparkle keeps the app up to date.</li>
+</ul>      ]]></description>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/domus-apps/jamb/releases/download/v1.0.0/Jamb.zip"
+        sparkle:edSignature="gVONycqwFmcChthEBhIlP67ahP3tNWDCIWHETcSTXhY9+Xc9Nw/f0sM9U8DOsy0uH/owc3gaTx+PCBW1oPbBDA==" length="2875887"
+        type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>
