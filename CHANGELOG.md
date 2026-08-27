@@ -4,6 +4,10 @@ All notable changes to Jamb are documented here. The release workflow publishes 
 
 Keep each bullet on a single line: release notes render line breaks literally (both on GitHub and in the update dialog), so wrapped lines would break mid-sentence.
 
+## 1.0.1
+
+- Fixed: installing by COPYING the app (instead of Finder-moving it) left it running from Gatekeeper's translocated read-only path, which blocked Sparkle updates — the app now detects this at launch, clears the quarantine flag, and relaunches itself from its real location.
+
 ## 1.0.0
 
 - Initial release: press ⌃⌥J and every text input visible on screen — across all apps and windows — gets a label chip and a highlight; type the label and the caret jumps there, ready to type.
