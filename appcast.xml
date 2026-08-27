@@ -25,5 +25,21 @@
         sparkle:edSignature="gVONycqwFmcChthEBhIlP67ahP3tNWDCIWHETcSTXhY9+Xc9Nw/f0sM9U8DOsy0uH/owc3gaTx+PCBW1oPbBDA==" length="2875887"
         type="application/octet-stream"/>
     </item>
+    <item>
+      <title>Jamb v1.0.1</title>
+      <link>https://github.com/domus-apps/jamb/releases/tag/v1.0.1</link>
+      <pubDate>Thu, 27 Aug 2026 02:03:03 +0000</pubDate>
+      <description><![CDATA[
+<ul>
+<li>Fixed: installing by COPYING the app (instead of Finder-moving it) left it running from Gatekeeper's translocated read-only path, which blocked Sparkle updates — the app now detects this at launch, clears the quarantine flag, and relaunches itself from its real location.</li>
+</ul>      ]]></description>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/domus-apps/jamb/releases/download/v1.0.1/Jamb.zip"
+        sparkle:edSignature="h5fUw2UFrBX3M6r0XDiPEuuUsiFjMzEhdbuyhT7MR7yYmXTTOeInc83OqXpUAgAdAB4+yR3RgveNW8egNTQkBg==" length="2878474"
+        type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>
