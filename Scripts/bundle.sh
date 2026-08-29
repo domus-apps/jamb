@@ -24,7 +24,11 @@ cp -R "$SPARKLE" "$APP/Contents/Frameworks/"
 # including the dark/clear/tinted variants — plus a fallback AppIcon.icns
 # rendered from the same layers.
 ICONBUILD=$(mktemp -d)
-xcrun actool Assets/AppIcon.icon --compile "$ICONBUILD" \
+# Absolute path on purpose: actool delegates to the ibtoold daemon,
+# which caches compilations keyed by the document path as passed —
+# sibling apps all saying "Assets/AppIcon.icon" collide and get each
+# other's icons.
+xcrun actool "$PWD/Assets/AppIcon.icon" --compile "$ICONBUILD" \
     --platform macosx --minimum-deployment-target 26.0 \
     --app-icon AppIcon --output-partial-info-plist "$ICONBUILD/partial.plist" \
     --output-format human-readable-text --errors > /dev/null
