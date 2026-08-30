@@ -41,5 +41,22 @@
         sparkle:edSignature="h5fUw2UFrBX3M6r0XDiPEuuUsiFjMzEhdbuyhT7MR7yYmXTTOeInc83OqXpUAgAdAB4+yR3RgveNW8egNTQkBg==" length="2878474"
         type="application/octet-stream"/>
     </item>
+    <item>
+      <title>Jamb v1.0.2</title>
+      <link>https://github.com/domus-apps/jamb/releases/tag/v1.0.2</link>
+      <pubDate>Sun, 30 Aug 2026 01:40:59 +0000</pubDate>
+      <description><![CDATA[
+<h3>Added</h3>
+<ul>
+<li>Spotlight now finds the app by its Korean name and by what it does — 잼, 잼브, and 커서 점프 all match.</li>
+</ul>      ]]></description>
+      <sparkle:version>3</sparkle:version>
+      <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/domus-apps/jamb/releases/download/v1.0.2/Jamb.zip"
+        sparkle:edSignature="mmmOtsZO1gmppaPVrl2IfEyyXHOYi2WTkCvHFgDmNt81pYhRJCwI/GGBDFNPoeHeKfO7qKP91pRtm1RnPNvsDg==" length="2878535"
+        type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>
