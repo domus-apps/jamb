@@ -4,6 +4,12 @@ All notable changes to Jamb are documented here. The release workflow publishes 
 
 Keep each bullet on a single line: release notes render line breaks literally (both on GitHub and in the update dialog), so wrapped lines would break mid-sentence.
 
+## 1.0.2
+
+### Added
+
+- Spotlight now finds the app by its Korean name and by what it does — 잼, 잼브, and 커서 점프 all match.
+
 ## 1.0.1
 
 - Fixed: installing by COPYING the app (instead of Finder-moving it) left it running from Gatekeeper's translocated read-only path, which blocked Sparkle updates — the app now detects this at launch, clears the quarantine flag, and relaunches itself from its real location.
