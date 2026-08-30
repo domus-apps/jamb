@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleAlternateNames</key>
+	<array>
+		<string>잼</string>
+		<string>잼브</string>
+		<string>커서 점프</string>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>Jamb</string>
 	<key>CFBundleIconFile</key>
