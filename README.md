@@ -1,25 +1,25 @@
 <p align="center">
-  <img src="Assets/banner.png" alt="Jamb — Jump the cursor into any input on screen" />
+  <img src="Assets/banner.png" alt="Jamb: Jump the cursor into any input on screen" />
 </p>
 
 <p align="center">
-  Jump the text cursor into any input field on screen, keyboard-only —<br />
+  Jump the text cursor into any input field on screen, keyboard-only,<br />
   in the spirit of VSCode's Jumpy, but system-wide.
 </p>
 
-Press ⌃⌥J and Jamb walks every window visible on screen — all apps, not
-just the active one — through the Accessibility API, finds every visible
-text input (fields, text areas, search fields, combo boxes — never
+Press ⌃⌥J and Jamb walks every window visible on screen, all apps, not
+just the active one, through the Accessibility API, finds every visible
+text input (fields, text areas, search fields, combo boxes, never
 password fields), and overlays each one with a short label chip. Type a
 chip's letters and the caret lands at the end of that field's text, ready
-for typing — activating that app first if the field lives in a background
+for typing, activating that app first if the field lives in a background
 window. Escape or a click anywhere dismisses.
 
 ## Status
 
 Prototype. Current scope is field-level jumping (caret to end of text)
-across the windows of the current Space. The fuller Jumpy treatment —
-labels at word positions *inside* each field via `AXBoundsForRange` — is
+across the windows of the current Space. The fuller Jumpy treatment,
+labels at word positions *inside* each field via `AXBoundsForRange`, is
 the planned next step.
 
 ## Browsers
@@ -27,7 +27,7 @@ the planned next step.
 Web-page inputs work once the browser exposes its web-content
 accessibility tree:
 
-- **Safari/WebKit** exposes it by default — no setup.
+- **Safari/WebKit** exposes it by default, no setup.
 - **Chromium** (Chrome, Brave, …) keeps it dormant, and no external signal
   wakes it (`AXManualAccessibility` is Electron-only; modern Chromium
   ignores `AXEnhancedUserInterface`). Enable it in the browser itself: on
