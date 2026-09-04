@@ -18,6 +18,6 @@ Keep each bullet on a single line: release notes render line breaks literally (b
 
 - Initial release: press ⌃⌥J and every text input visible on screen, across all apps and windows, gets a label chip and a highlight; type the label and the caret jumps there, ready to type.
 - Cross-app jumps activate the target app and raise its window; fields in background apps work the same as the active one.
-- Works with native apps, Electron apps (their accessibility tree is woken automatically), and web pages: Safari out of the box, Chromium browsers after enabling web accessibility (Jamb shows a one-time walkthrough per browser).
+- Works with native apps, Electron apps (their accessibility tree is woken automatically), and web pages. Safari works out of the box, Chromium browsers after enabling web accessibility (Jamb shows a one-time walkthrough per browser).
 - Label keys match by keyboard position, so non-Latin input sources (e.g. Korean) and alternative Latin layouts (Dvorak) both work.
 - First-run onboarding gates on the Accessibility permission; a customizable global shortcut lives in Settings, and Sparkle keeps the app up to date.
