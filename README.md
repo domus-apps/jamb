@@ -50,3 +50,9 @@ Accessibility access on first launch (System Settings → Privacy & Security
 swift run Jamb   # requires granting Accessibility to the built binary
 swift test
 ```
+
+## License
+
+MIT, see [LICENSE](LICENSE). Bundled third-party software and its licenses are listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+
+Inspired by [Jumpy](https://github.com/wmaurer/vscode-jumpy) for VS Code. No code is shared.
