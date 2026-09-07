@@ -58,5 +58,38 @@
         sparkle:edSignature="mmmOtsZO1gmppaPVrl2IfEyyXHOYi2WTkCvHFgDmNt81pYhRJCwI/GGBDFNPoeHeKfO7qKP91pRtm1RnPNvsDg==" length="2878535"
         type="application/octet-stream"/>
     </item>
+    <item>
+      <title>Jamb v1.0.3</title>
+      <link>https://github.com/domus-apps/jamb/releases/tag/v1.0.3</link>
+      <pubDate>Mon, 07 Sep 2026 07:12:16 +0000</pubDate>
+      <description xml:lang="en"><![CDATA[
+<h2>1.0.3</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed steady processor use that began once Settings had been opened and went on after the window was closed.</li>
+</ul>
+<h2>1.0.2</h2>
+<h3>Added</h3>
+<ul>
+<li>Spotlight now finds the app by its Korean name and by what it does: 잼, 잼브, and 커서 점프 all match.</li>
+</ul>
+<h2>1.0.1</h2>
+<ul>
+<li>Fixed: installing by COPYING the app (instead of Finder-moving it) left it running from Gatekeeper's translocated read-only path, which blocked Sparkle updates. The app now detects this at launch, clears the quarantine flag, and relaunches itself from its real location.</li>
+</ul>      ]]></description>
+      <description xml:lang="ko"><![CDATA[
+<h2>1.0.3</h2>
+<h3>수정</h3>
+<ul>
+<li>설정 창을 한 번 열면 창을 닫은 뒤에도 CPU를 계속 사용하던 문제를 고쳤습니다.</li>
+</ul>      ]]></description>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/domus-apps/jamb/releases/download/v1.0.3/Jamb.zip"
+        sparkle:edSignature="NvtvJDzLXfq+6AttsVECXIWu41TaL7aOuHE2TD73PHKuaS1QIj+kOKfiFDClb7d7Sm+GECjOrwa3MR+l3ZhMAg==" length="2878587"
+        type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>
