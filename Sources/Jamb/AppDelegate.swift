@@ -55,8 +55,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 UserDefaults.standard.set(true, forKey: Self.onboardingCompletedKey)
                 self?.onboardingController = nil
             }
+            observeClose(of: onboardingController?.window)
         }
-        NSApp.activate(ignoringOtherApps: true)
+        comeForward()
         onboardingController?.window?.makeKeyAndOrderFront(nil)
     }
 
@@ -248,14 +249,64 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    /* Activation hand-back. An accessory app that activates itself to show
+       a window stays the active app after that window closes — macOS never
+       moves activation on window close — so a windowless Jamb would be left
+       frontmost until the user clicked elsewhere. Anything keyed off the
+       frontmost app then misbehaves (Atrium's Option+` lists the front app's
+       windows and finds none; plain keys beep). Remember who was active
+       before we came forward and give activation back once our last window
+       is gone. */
+    private var previouslyActiveApp: NSRunningApplication?
+
+    private func comeForward() {
+        if !NSApp.isActive,
+            let front = NSWorkspace.shared.frontmostApplication,
+            front.processIdentifier != ProcessInfo.processInfo.processIdentifier
+        {
+            previouslyActiveApp = front
+        }
+        NSApp.activate(ignoringOtherApps: true)
+    }
+
+    private func handBackActivationIfWindowless() {
+        guard NSApp.isActive, settingsWindowController?.window?.isVisible != true,
+            onboardingController?.window?.isVisible != true
+        else { return }
+        let previous = previouslyActiveApp
+        previouslyActiveApp = nil
+        if let previous, !previous.isTerminated,
+            previous.activate(from: .current, options: [])
+        {
+            return
+        }
+        /* No one to hand back to (quit meanwhile): hiding yields activation
+           to whatever the system picks next. */
+        NSApp.hide(nil)
+    }
+
+    private func observeClose(of window: NSWindow?) {
+        guard let window else { return }
+        NotificationCenter.default.addObserver(
+            forName: NSWindow.willCloseNotification, object: window, queue: .main
+        ) { [weak self] _ in
+            /* isVisible is still true inside willClose; re-evaluate (hand
+               activation back) on the next runloop cycle. */
+            DispatchQueue.main.async {
+                self?.handBackActivationIfWindowless()
+            }
+        }
+    }
+
     /* Accessory apps don't come forward on their own — activate first or
        the window opens behind the current app. */
     @objc private func openSettings() {
         if settingsWindowController == nil {
             settingsWindowController = SettingsWindowController(
                 store: shortcutStore, updater: updater)
+            observeClose(of: settingsWindowController?.window)
         }
-        NSApp.activate(ignoringOtherApps: true)
+        comeForward()
         settingsWindowController?.window?.makeKeyAndOrderFront(nil)
     }
 }
