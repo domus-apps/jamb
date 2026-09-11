@@ -130,5 +130,49 @@
         sparkle:edSignature="t2Cq2h08XJHfPU5KfiVUhhB+UuMCueusliLvwXluX4sMa07+gf1O/dArfjPISHgJzHXfA76VqkCFKZZug627Dw==" length="2879821"
         type="application/octet-stream"/>
     </item>
+    <item>
+      <title>Jamb v1.0.5</title>
+      <link>https://github.com/domus-apps/jamb/releases/tag/v1.0.5</link>
+      <pubDate>Fri, 11 Sep 2026 05:48:02 +0000</pubDate>
+      <description xml:lang="en"><![CDATA[
+<h2>1.0.5</h2>
+<h3>Fixed</h3>
+<ul>
+<li>The app icon's background looked flat in the Dock and Finder. It now shows its gradient.</li>
+</ul>
+<h2>1.0.4</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Closing Settings or the welcome window now returns you to the app you were using, so other apps' shortcuts keep working right away.</li>
+</ul>
+<h2>1.0.3</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed steady processor use that began once Settings had been opened and went on after the window was closed.</li>
+</ul>      ]]></description>
+      <description xml:lang="ko"><![CDATA[
+<h2>1.0.5</h2>
+<h3>수정</h3>
+<ul>
+<li>Dock과 Finder에서 앱 아이콘 배경이 평면으로 보이던 문제를 고쳤습니다.</li>
+</ul>
+<h2>1.0.4</h2>
+<h3>수정</h3>
+<ul>
+<li>설정 창이나 시작 안내 창을 닫으면 이전에 쓰던 앱으로 바로 돌아가, 다른 앱의 단축키가 곧바로 동작합니다.</li>
+</ul>
+<h2>1.0.3</h2>
+<h3>수정</h3>
+<ul>
+<li>설정 창을 한 번 열면 창을 닫은 뒤에도 CPU를 계속 사용하던 문제를 고쳤습니다.</li>
+</ul>      ]]></description>
+      <sparkle:version>6</sparkle:version>
+      <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/domus-apps/jamb/releases/download/v1.0.5/Jamb.zip"
+        sparkle:edSignature="HSZgMe+3h03X+0AlR9D1fL0kKz+meH73KK/VOTUmW09XfPBRRd98qLdBlN9G6gdhYkLo9kIsofwYSBOLV7RfBw==" length="2922210"
+        type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>
