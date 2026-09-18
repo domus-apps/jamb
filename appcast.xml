@@ -174,5 +174,49 @@
         sparkle:edSignature="HSZgMe+3h03X+0AlR9D1fL0kKz+meH73KK/VOTUmW09XfPBRRd98qLdBlN9G6gdhYkLo9kIsofwYSBOLV7RfBw==" length="2922210"
         type="application/octet-stream"/>
     </item>
+    <item>
+      <title>Jamb v1.0.6</title>
+      <link>https://github.com/domus-apps/jamb/releases/tag/v1.0.6</link>
+      <pubDate>Fri, 18 Sep 2026 04:05:25 +0000</pubDate>
+      <description xml:lang="en"><![CDATA[
+<h2>1.0.6</h2>
+<h3>Fixed</h3>
+<ul>
+<li>The Settings window could no longer be dragged after a switch in it was flipped.</li>
+</ul>
+<h2>1.0.5</h2>
+<h3>Fixed</h3>
+<ul>
+<li>The app icon's background looked flat in the Dock and Finder. It now shows its gradient.</li>
+</ul>
+<h2>1.0.4</h2>
+<h3>Fixed</h3>
+<ul>
+<li>Closing Settings or the welcome window now returns you to the app you were using, so other apps' shortcuts keep working right away.</li>
+</ul>      ]]></description>
+      <description xml:lang="ko"><![CDATA[
+<h2>1.0.6</h2>
+<h3>수정</h3>
+<ul>
+<li>설정 창의 스위치를 켜거나 끈 뒤 창을 끌어 옮길 수 없던 문제를 수정했습니다.</li>
+</ul>
+<h2>1.0.5</h2>
+<h3>수정</h3>
+<ul>
+<li>Dock과 Finder에서 앱 아이콘 배경이 평면으로 보이던 문제를 고쳤습니다.</li>
+</ul>
+<h2>1.0.4</h2>
+<h3>수정</h3>
+<ul>
+<li>설정 창이나 시작 안내 창을 닫으면 이전에 쓰던 앱으로 바로 돌아가, 다른 앱의 단축키가 곧바로 동작합니다.</li>
+</ul>      ]]></description>
+      <sparkle:version>7</sparkle:version>
+      <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/domus-apps/jamb/releases/download/v1.0.6/Jamb.zip"
+        sparkle:edSignature="k25k75qizx9PPpT1JewRyd2JdWwZuYo8bHIQrHWo+44+vyAENZ3SEs5MDKNBOQSj/qwXOKw7JvH47X5lxnvDCA==" length="2922567"
+        type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>
