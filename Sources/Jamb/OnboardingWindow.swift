@@ -13,13 +13,13 @@ final class OnboardingWindowController: NSWindowController, NSWindowDelegate {
 
     private let statusLabel = NSTextField(labelWithString: "")
     private lazy var requestButton = NSButton(
-        title: "Request Accessibility Access", target: self,
+        title: L("Request Accessibility Access"), target: self,
         action: #selector(requestAccess))
     private lazy var settingsLink = NSButton(
-        title: "Open Privacy & Security Settings…", target: self,
+        title: L("Open Privacy & Security Settings…"), target: self,
         action: #selector(openSystemSettings))
     private lazy var startButton = NSButton(
-        title: "Start Using Jamb", target: self, action: #selector(start))
+        title: L("Start Using Jamb"), target: self, action: #selector(start))
 
     init(onComplete: @escaping () -> Void) {
         self.onComplete = onComplete
@@ -59,18 +59,19 @@ final class OnboardingWindowController: NSWindowController, NSWindowDelegate {
     // MARK: - Content
 
     private func makeContent() -> NSView {
-        let title = NSTextField(labelWithString: "Welcome to Jamb")
+        let title = NSTextField(labelWithString: L("Welcome to Jamb"))
         title.font = .systemFont(ofSize: 30, weight: .bold)
 
         let intro = NSTextField(
             wrappingLabelWithString:
-                "Jamb jumps your text cursor into any input on screen — across every "
-                + "app and window — without touching the mouse. Press the shortcut, "
-                + "type the label shown on an input, and the caret lands there, "
-                + "ready to type.")
+                L(
+                    "Jamb jumps your text cursor into any input on screen — across every app and window — without touching the mouse. Press the shortcut, type the label shown on an input, and the caret lands there, ready to type."
+                ))
         intro.font = .systemFont(ofSize: 14)
         intro.textColor = .secondaryLabelColor
         intro.alignment = .center
+        /* Break Korean between words, like the system. */
+        intro.lineBreakStrategy = .hangulWordPriority
         intro.preferredMaxLayoutWidth = 470
 
         let illustration = OnboardingIllustrationView()
@@ -80,12 +81,20 @@ final class OnboardingWindowController: NSWindowController, NSWindowDelegate {
             illustration.heightAnchor.constraint(equalToConstant: 220),
         ])
 
-        let shortcutRow = NSStackView(
-            views: [
-                labelView("Press"),
-                keycap("⌃"), keycap("⌥"), keycap("J"),
-                labelView("to start a jump"),
-            ])
+        /* The keycaps sit where the sentence's %@ is, so each language
+           keeps its own word order around them. */
+        let sentence = L("Press %@ to start a jump").components(separatedBy: "%@")
+        var shortcutViews: [NSView] = []
+        if let before = sentence.first?.trimmingCharacters(in: .whitespaces), !before.isEmpty {
+            shortcutViews.append(labelView(before))
+        }
+        shortcutViews += [keycap("⌃"), keycap("⌥"), keycap("J")]
+        if sentence.count > 1, case let after = sentence[1].trimmingCharacters(in: .whitespaces),
+            !after.isEmpty
+        {
+            shortcutViews.append(labelView(after))
+        }
+        let shortcutRow = NSStackView(views: shortcutViews)
         shortcutRow.orientation = .horizontal
         shortcutRow.spacing = 6
 
@@ -145,8 +154,8 @@ final class OnboardingWindowController: NSWindowController, NSWindowDelegate {
         let trusted = AXIsProcessTrusted()
         statusLabel.stringValue =
             trusted
-            ? "✓ Accessibility access granted"
-            : "Jamb needs Accessibility access to find inputs and move the cursor."
+            ? L("✓ Accessibility access granted")
+            : L("Jamb needs Accessibility access to find inputs and move the cursor.")
         statusLabel.textColor = trusted ? .systemGreen : .labelColor
         requestButton.isHidden = trusted
         settingsLink.isHidden = trusted

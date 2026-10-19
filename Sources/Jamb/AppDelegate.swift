@@ -167,24 +167,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private func setUpMainMenu() {
         let appMenu = NSMenu()
         let settingsItem = NSMenuItem(
-            title: "Settings…", action: #selector(openSettings), keyEquivalent: ",")
+            title: L("Settings…"), action: #selector(openSettings), keyEquivalent: ",")
         settingsItem.target = self
         appMenu.addItem(settingsItem)
         appMenu.addItem(updater.makeMenuItem())
         appMenu.addItem(.separator())
         appMenu.addItem(
             NSMenuItem(
-                title: "Quit Jamb",
+                title: L("Quit Jamb"),
                 action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
 
-        let windowMenu = NSMenu(title: "Window")
+        let windowMenu = NSMenu(title: L("Window"))
         windowMenu.addItem(
             NSMenuItem(
-                title: "Close Window",
+                title: L("Close Window"),
                 action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w"))
         windowMenu.addItem(
             NSMenuItem(
-                title: "Minimize",
+                title: L("Minimize"),
                 action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m"))
 
         let mainMenu = NSMenu()
@@ -218,20 +218,20 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(jumpItem)
         menu.addItem(.separator())
         let settingsItem = NSMenuItem(
-            title: "Settings…", action: #selector(openSettings), keyEquivalent: ",")
+            title: L("Settings…"), action: #selector(openSettings), keyEquivalent: ",")
         settingsItem.target = self
         menu.addItem(settingsItem)
         menu.addItem(updater.makeMenuItem())
         /* Remote-debugging aid: one click copies a scan report (per-app
            field counts and timings on THIS machine) for pasting back. */
         let diagnosticsItem = NSMenuItem(
-            title: "Copy Diagnostics", action: #selector(copyDiagnostics), keyEquivalent: "")
+            title: L("Copy Diagnostics"), action: #selector(copyDiagnostics), keyEquivalent: "")
         diagnosticsItem.target = self
         menu.addItem(diagnosticsItem)
         menu.addItem(.separator())
         menu.addItem(
             NSMenuItem(
-                title: "Quit Jamb",
+                title: L("Quit Jamb"),
                 action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         item.menu = menu
         statusItem = item

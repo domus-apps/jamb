@@ -8,6 +8,8 @@
 		<string>잼브</string>
 		<string>커서 점프</string>
 	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>Jamb</string>
 	<key>CFBundleIconFile</key>
@@ -16,6 +18,11 @@
 	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.jhaemin.jamb</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>ko</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>Jamb</string>
 	<key>CFBundlePackageType</key>

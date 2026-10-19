@@ -175,8 +175,11 @@ final class JumpOverlayController: NSObject, NSWindowDelegate {
             cancel()
             return
         }
+        /* Label keys match by keyboard POSITION, not produced character:
+           with a Korean (or any non-Latin) input source active, the event's
+           characters are jamo and would never match a label. */
         guard
-            let characters = (Self.latinCharacters(for: event)
+            let characters = (ShortcutSpec.latinCharacters(for: event)
                 ?? event.charactersIgnoringModifiers)?.lowercased(),
             !characters.isEmpty
         else { return }
@@ -203,37 +206,6 @@ final class JumpOverlayController: NSObject, NSWindowDelegate {
             let matches = target.label.hasPrefix(typed)
             target.chip.update(typedCount: typed.count, matches: matches)
             target.highlight.update(matches: matches)
-        }
-    }
-
-    /* Label keys must match by keyboard POSITION, not produced character:
-       with a Korean (or any non-Latin) input source active, the event's
-       characters are jamo and would never match a label. Translate the key
-       code through the user's Latin-capable layout instead — which also
-       keeps Dvorak and friends working as their users expect. */
-    private static func latinCharacters(for event: NSEvent) -> String? {
-        guard
-            let source = TISCopyCurrentASCIICapableKeyboardLayoutInputSource()?
-                .takeRetainedValue(),
-            let layoutPointer = TISGetInputSourceProperty(
-                source, kTISPropertyUnicodeKeyLayoutData)
-        else { return nil }
-        let layoutData =
-            Unmanaged<CFData>.fromOpaque(layoutPointer).takeUnretainedValue() as Data
-        return layoutData.withUnsafeBytes { (bytes: UnsafeRawBufferPointer) -> String? in
-            guard
-                let layout = bytes.baseAddress?.assumingMemoryBound(
-                    to: UCKeyboardLayout.self)
-            else { return nil }
-            var deadKeyState: UInt32 = 0
-            var length = 0
-            var characters = [UniChar](repeating: 0, count: 4)
-            let status = UCKeyTranslate(
-                layout, event.keyCode, UInt16(kUCKeyActionDown), 0,
-                UInt32(LMGetKbdType()), OptionBits(kUCKeyTranslateNoDeadKeysMask),
-                &deadKeyState, characters.count, &length, &characters)
-            guard status == noErr, length > 0 else { return nil }
-            return String(utf16CodeUnits: characters, count: length)
         }
     }
 

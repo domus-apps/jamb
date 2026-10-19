@@ -11,6 +11,11 @@ APP=build/Jamb.app
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp .build/release/Jamb "$APP/Contents/MacOS/Jamb"
+# Localizations: SwiftPM packs the .lproj string tables into a resource
+# bundle; the app resolves it from Contents/Resources by hand (see
+# Sources/Jamb/Localization.swift — the generated accessor can't be
+# trusted across toolchains).
+cp -R .build/release/Jamb_Jamb.bundle "$APP/Contents/Resources/"
 cp Scripts/Info.plist "$APP/Contents/Info.plist"
 
 # Embed Sparkle.framework (auto-update). The binary references it via

@@ -4,6 +4,22 @@ All notable changes to Jamb are documented here. The release workflow publishes 
 
 Keep each bullet on a single line: release notes render line breaks literally (both on GitHub and in the update dialog), so wrapped lines would break mid-sentence.
 
+## 1.1.0
+
+### Added
+
+- Jamb is available in Korean. The menu, Settings, welcome window, and browser setup guide follow the macOS language.
+
+### Changed
+
+- Settings uses the system's grouped style, with section headers and rounded boxes like Xcode's settings.
+
+### Fixed
+
+- A shortcut recorded while a Korean input source was on showed a Korean letter instead of the key.
+- A shortcut using F1 through F20 showed a blank key.
+- Closing Settings or switching apps while recording the shortcut left it off until Settings was opened again.
+
 ## 1.0.6
 
 ### Fixed

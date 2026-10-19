@@ -37,25 +37,16 @@ enum BrowserOnboarding {
         guard !UserDefaults.standard.bool(forKey: shownKey) else { return }
         UserDefaults.standard.set(true, forKey: shownKey)
 
-        let name = app.localizedName ?? "This browser"
+        let name = app.localizedName ?? L("This browser")
         let alert = NSAlert()
-        alert.messageText = "Enable web accessibility in \(name)"
-        alert.informativeText = """
-            \(name) doesn't expose web pages to accessibility tools by \
-            default, so Jamb can only label its address bar — not inputs \
-            inside pages.
-
-            1. Open \(address) (the button below copies it — paste it into \
-            the address bar)
-            2. Check BOTH “Native accessibility API support” and \
-            “Web accessibility”
-            3. Reload the tab
-
-            To make it permanent, launch \(name) with \
-            --force-renderer-accessibility.
-            """
-        alert.addButton(withTitle: "Copy Address")
-        alert.addButton(withTitle: "Later")
+        alert.messageText = L("Enable web accessibility in %@", name)
+        /* Positional: the browser is named twice. The checkbox names stay
+           English in every language: chrome://accessibility is English-only. */
+        alert.informativeText = L(
+            "%1$@ doesn't expose web pages to accessibility tools by default, so Jamb can only label its address bar — not inputs inside pages.\n\n1. Open %2$@ (the button below copies it — paste it into the address bar)\n2. Check BOTH “Native accessibility API support” and “Web accessibility”\n3. Reload the tab\n\nTo make it permanent, launch %1$@ with --force-renderer-accessibility.",
+            name, address)
+        alert.addButton(withTitle: L("Copy Address"))
+        alert.addButton(withTitle: L("Later"))
         NSApp.activate(ignoringOtherApps: true)
         if alert.runModal() == .alertFirstButtonReturn {
             NSPasteboard.general.clearContents()

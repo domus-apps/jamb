@@ -1,0 +1,46 @@
+/* Jamb 한국어 — 영어 원문이 키입니다 (Localization.swift 참고) */
+
+/* 메뉴 */
+"Settings…" = "설정…";
+"Check for Updates…" = "업데이트 확인…";
+"Copy Diagnostics" = "진단 정보 복사";
+"Quit Jamb" = "Jamb 종료";
+"Window" = "윈도우";
+"Close Window" = "윈도우 닫기";
+"Minimize" = "최소화";
+
+/* 동작 (단축키 이름) */
+"Jump to Input" = "입력란으로 이동";
+
+/* 설정 */
+"General" = "일반";
+"Shortcuts" = "단축키";
+"Launch at login" = "로그인 시 실행";
+"Available in the bundled app only (Scripts/bundle.sh)." = "번들 앱에서만 사용할 수 있습니다 (Scripts/bundle.sh).";
+"Accessibility" = "손쉬운 사용";
+"Granted" = "허용됨";
+"Open Accessibility Settings…" = "손쉬운 사용 설정 열기…";
+"Jamb finds the inputs on screen through Accessibility. Without it, the shortcut has nothing to jump to." = "Jamb은 손쉬운 사용 권한으로 화면의 입력란을 찾습니다. 권한이 없으면 단축키를 눌러도 이동할 곳이 없습니다.";
+"Updates" = "업데이트";
+"Version" = "버전";
+"Global shortcut" = "전역 단축키";
+"Reset to Default" = "기본값으로 재설정";
+"The shortcut works everywhere, no matter which app is in front." = "어떤 앱이 앞에 있어도 단축키는 어디서나 동작합니다.";
+"Type shortcut…" = "단축키 입력…";
+
+/* 온보딩 */
+"Welcome to Jamb" = "Jamb에 오신 것을 환영합니다";
+"Jamb jumps your text cursor into any input on screen — across every app and window — without touching the mouse. Press the shortcut, type the label shown on an input, and the caret lands there, ready to type." = "Jamb은 마우스 없이 화면의 어느 입력란으로든 텍스트 커서를 옮깁니다. 모든 앱과 윈도우에서 동작합니다. 단축키를 누르고 입력란에 표시된 글자를 입력하면 커서가 그곳에 놓여 바로 입력할 수 있습니다.";
+"Press %@ to start a jump" = "%@ 키를 눌러 이동을 시작합니다";
+"Jamb needs Accessibility access to find inputs and move the cursor." = "입력란을 찾고 커서를 옮기려면 손쉬운 사용 권한이 필요합니다.";
+"✓ Accessibility access granted" = "✓ 손쉬운 사용 권한이 허용되었습니다";
+"Request Accessibility Access" = "손쉬운 사용 권한 요청";
+"Open Privacy & Security Settings…" = "개인정보 보호 및 보안 설정 열기…";
+"Start Using Jamb" = "Jamb 시작하기";
+
+/* 브라우저 웹 접근성 안내 (체크박스 이름은 chrome://accessibility가 영어뿐이라 영어 그대로) */
+"This browser" = "이 브라우저";
+"Enable web accessibility in %@" = "%@에서 웹 접근성 켜기";
+"%1$@ doesn't expose web pages to accessibility tools by default, so Jamb can only label its address bar — not inputs inside pages.\n\n1. Open %2$@ (the button below copies it — paste it into the address bar)\n2. Check BOTH “Native accessibility API support” and “Web accessibility”\n3. Reload the tab\n\nTo make it permanent, launch %1$@ with --force-renderer-accessibility." = "%1$@ 기본 설정으로는 웹 페이지가 접근성 도구에 공개되지 않아, Jamb은 주소 막대에만 글자를 표시하고 페이지 안의 입력란에는 표시하지 못합니다.\n\n1. %2$@ 주소를 엽니다 (아래 버튼으로 복사해 주소 막대에 붙여 넣으면 됩니다)\n2. “Native accessibility API support”와 “Web accessibility”를 모두 체크합니다\n3. 탭을 새로고침합니다\n\n항상 켜 두려면 %1$@ 실행 시 --force-renderer-accessibility 옵션을 붙입니다.";
+"Copy Address" = "주소 복사";
+"Later" = "나중에";
