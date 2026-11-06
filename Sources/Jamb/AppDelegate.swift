@@ -222,6 +222,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         settingsItem.target = self
         menu.addItem(settingsItem)
         menu.addItem(updater.makeMenuItem())
+        menu.addItem(makeWebsiteItem())
         /* Remote-debugging aid: one click copies a scan report (per-app
            field counts and timings on THIS machine) for pasting back. */
         let diagnosticsItem = NSMenuItem(
@@ -300,6 +301,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     /* Accessory apps don't come forward on their own — activate first or
        the window opens behind the current app. */
+    private func makeWebsiteItem() -> NSMenuItem {
+        let item = NSMenuItem(
+            title: L("Domus Website"), action: #selector(openWebsite), keyEquivalent: "")
+        item.target = self
+        return item
+    }
+
+    @objc private func openWebsite() {
+        NSWorkspace.shared.open(websiteURL)
+    }
+
     @objc private func openSettings() {
         if settingsWindowController == nil {
             settingsWindowController = SettingsWindowController(
